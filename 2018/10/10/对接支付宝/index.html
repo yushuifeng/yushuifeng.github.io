@@ -30,113 +30,84 @@
 
 <body class="loading">
     <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://github.com/yushuifeng/" title="Github" target="_blank" rel="noopener">Github</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://weibo.com/yushuifeng2010/" title="Weibo" target="_blank" rel="noopener">Weibo</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="mailto:yushuifeng@hotmail.com/" title="Email" target="_blank" rel="noopener">Email</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="tencent://message/?uin=598744314" title="QQ" target="_blank" rel="noopener">QQ</a>
-        </li>
-        
-    </ul>
-    <p id="copyright">
-        &copy; 2018 SF.Y.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a>
-        by Fechin
-    </p>
-</div>
-
-<div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
-    </div>
-    <div id="vibrant">
-        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">对接支付宝</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
         <div>
-            <a class="image-logo" href="/"></a>
-            <div class="icon-menu switchmenu"></div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
         </div>
     </div>
-    
-    <div id="post0">
-        <p>十月 10, 2018</p>
-        <h2><a href="/2018/10/10/Thinking-in-UML/" title="Thinking in UML" class="posttitle">Thinking in UML</a></h2>
-        <p class="summary">目录
-大象希形
-再版序
-写给读者的话
-关于本书
-如何阅读本书
-免费下载资源使用说明Part I 你需要了解第1章 ...</p>
-    </div>
-    
+    <div class="scrollbar"></div>
 </div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">对接支付宝</h1>
+        <div class="stuff">
+            <span>十月 10, 2018</span>
+            
 
-    <div id="primary">
+        </div>
+        <div class="content markdown">
+            <p>产品需要，要与第三方支付平台对接，为产品提供在线支付能力。预制三种支付方式，畅捷支付、支付宝、微信，首先来做与支付宝的对接。</p>
+<p>参考支付宝的接入文档，各种晕。。。主要是文档太多，而且顺序还比较乱，看看就不知道跳到哪去了，再往回还就找不到了。。。<br>以下先记录一些开发过程中遇到的问题吧</p>
+<ul>
+<li>Q1：调用alipayClient.pageExecute接口时的各种问题</li>
+</ul>
+<ul>
+<li>A：主要还是参数的问题，这里主要需要关注一下公钥与私钥的配对。第一次下载的 RSA 生成工具有问题（Mac版，支付宝RAS密钥生成器SHAwithRSA2048_V1.0），生成公钥后找私钥在文件里，我也没打开文件。后来找到了这个：secret_key_tools_RSA_win，生成了一对儿秘钥，这回可以了。</li>
+</ul>
+<ul>
+<li>Q2：需要提供一个外网的地址用来回调</li>
+</ul>
+<ul>
+<li>A：支付宝需要回调服务，用来验证和告诉你支付的结果，因为支付宝是统一的公网服务，所以需要给它提供一个外网个地址。开始想跟公司申请给台式机开个映射，但，不允许。。。想了个折中的办法，用测试环境的外网地址！把服务注册到测试环境的 gateway 上，解决！</li>
+</ul>
+<p>* </p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
         
-<div class="post">
-    <a href="/2018/10/10/对接支付宝/" title="对接支付宝">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>十月 10, 2018</p>
-        <h3><a href="/2018/10/10/对接支付宝/" title="对接支付宝" class="posttitle">对接支付宝</a></h3>
-        <p>产品需要，要与第三方支付平台对接，为产品提供在线支付能力。预制三种支付方式，畅捷支付、支付宝、微信，首先来做与支付宝的对接。
-参考支付宝的接入文档，各种晕...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2018/09/29/初探-Google-Developer-Days/" title="初探 Google Developer Days">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>九月 29, 2018</p>
-        <h3><a href="/2018/09/29/初探-Google-Developer-Days/" title="初探 Google Developer Days" class="posttitle">初探 Google Developer Days</a></h3>
-        <p></p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2018/09/18/hello-world/" title="Hello World">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>九月 18, 2018</p>
-        <h3><a href="/2018/09/18/hello-world/" title="Hello World" class="posttitle">Hello World</a></h3>
-        <p>Welcome to Hexo! This is your very first post. Check documentation for more i...</p>
-    </div>
-</div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
 
 
     </div>
     
 </div>
-<div id="preview"></div>
 
+
+    </div>
+</div>
 </body>
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
