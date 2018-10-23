@@ -11,7 +11,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    
+    <meta name="description" content="记脚手架升级现有脚手架使用半年有余了，各依赖一直没有升级。前几天开发过程中出现了开发环境使用了最新版 API 而测试环境上不支持而引发报错的问题。
+对依赖进行升级的过程中关注到了基础脚手架的版本,"> 
     <meta name="author" content="SF.Y"> 
     <link rel="alternative" href="atom.xml" title="SF.Y" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.ico"> 
@@ -26,7 +27,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">React.createContext is not a function</h3>
+    <h3 class="subtitle">yarn</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -43,14 +44,17 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">React.createContext is not a function</h1>
+        <h1 class="title">yarn</h1>
         <div class="stuff">
-            <span>十月 19, 2018</span>
+            <span>十月 20, 2018</span>
             
 
         </div>
         <div class="content markdown">
-            
+            <p>yarn安装包的时候总有几个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Couldn&apos;t find package &quot;@babel/core@^7.0.0&quot; required by &quot;umi&quot; on the &quot;npm&quot; registry.</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error An unexpected error occurred: &quot;EACCES: permission denied, open &apos;/Users/yushuifeng/node_modules/.yarn-integrity&apos;&quot;.</span><br></pre></td></tr></table></figure>
+<p>实际上貌似不需要处理，重新执行几次就可以了，原因目前未知。。。</p>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
