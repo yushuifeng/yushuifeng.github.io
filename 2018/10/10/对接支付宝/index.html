@@ -67,7 +67,12 @@
 <ul>
 <li>A：支付宝需要回调服务，用来验证和告诉你支付的结果，因为支付宝是统一的公网服务，所以需要给它提供一个外网个地址。开始想跟公司申请给台式机开个映射，但，不允许。。。想了个折中的办法，用测试环境的外网地址！把服务注册到测试环境的 gateway 上，解决！</li>
 </ul>
-<p>* </p>
+<ul>
+<li>Q3：验签失败</li>
+</ul>
+<ul>
+<li>A: 配置信息中的公钥是“支付宝公钥”，是将秘钥工具生成的一对公钥、私钥中的“公钥”设置到支付宝中的应用秘钥中，然后支付宝会生成一个“支付宝公钥”。</li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
